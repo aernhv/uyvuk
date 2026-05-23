@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  role         String   @default("owner")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Service {
+  id              String    @id @default(cuid())
+  nameAr          String
+  nameEn          String
+  descriptionAr   String    @default("")
+  descriptionEn   String    @default("")
+  durationMinutes Int
+  price           Float
+  isActive        Boolean   @default(true)
+  sortOrder       Int       @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  bookings        Booking[]
+}
+
+model Barber {
+  id          String           @id @default(cuid())
+  name        String
+  photoUrl    String?
+  bioAr       String           @default("")
+  bioEn       String           @default("")
+  specialtyAr String           @default("")
+  specialtyEn String           @default("")
+  isActive    Boolean          @default(true)
+  sortOrder   Int              @default(0)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  schedules   BarberSchedule[]
+  bookings    Booking[]
+}
+
+model BarberSchedule {
+  id        String   @id @default(cuid())
+  barberId  String
+  barber    Barber   @relation(fields: [barberId], references: [id], onDelete: Cascade)
+  dayOfWeek Int
+  startTime String
+  endTime   String
+  isOff     Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([barberId, dayOfWeek])
+}
+
+model Booking {
+  id            String   @id @default(cuid())
+  customerName  String
+  customerPhone String
+  customerEmail String?
+  serviceId     String
+  service       Service  @relation(fields: [serviceId], references: [id])
+  barberId      String
+  barber        Barber   @relation(fields: [barberId], references: [id])
+  startTime     DateTime
+  endTime       DateTime
+  status        String   @default("pending")
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model BlockedDate {
+  id        String   @id @default(cuid())
+  date      String
+  reason    String?
+  createdAt DateTime @default(now())
+}
+
+model ShopSettings {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}

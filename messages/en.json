@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "barbers": "Our Barbers",
+    "booking": "Book Now",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "dashboard": "Dashboard"
+  },
+  "home": {
+    "hero": {
+      "badge": "Premium Barbershop",
+      "title": "The Art of",
+      "titleHighlight": "The Perfect Cut",
+      "subtitle": "Experience the finest grooming services with our master barbers. Where tradition meets modern style.",
+      "cta": "Book an Appointment",
+      "ctaSecondary": "Explore Services"
+    },
+    "about": {
+      "badge": "Our Story",
+      "title": "Craftsmanship & Tradition",
+      "text1": "Since our founding, we have been dedicated to the art of barbering. Every cut, every shave is a testament to our commitment to excellence and precision.",
+      "text2": "Our master barbers blend time-honored techniques with contemporary style, ensuring every client leaves looking and feeling their best.",
+      "stat1Value": "10+",
+      "stat1Label": "Years of Experience",
+      "stat2Value": "5K+",
+      "stat2Label": "Happy Clients",
+      "stat3Value": "3",
+      "stat3Label": "Expert Barbers"
+    },
+    "services": {
+      "badge": "What We Offer",
+      "title": "Our Services",
+      "subtitle": "From classic cuts to modern styles, we offer a full range of grooming services."
+    },
+    "cta": {
+      "title": "Ready for Your Next Look?",
+      "subtitle": "Book your appointment online — it takes less than 2 minutes.",
+      "button": "Book Now"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional grooming services crafted for the modern gentleman.",
+    "duration": "Duration",
+    "price": "Price",
+    "book": "Book This Service",
+    "minutes": "min"
+  },
+  "barbers": {
+    "title": "Meet Our Barbers",
+    "subtitle": "Skilled artisans dedicated to the perfect cut.",
+    "specialty": "Specialty",
+    "book": "Book with"
+  },
+  "booking": {
+    "title": "Book an Appointment",
+    "subtitle": "Select your service, barber, and preferred time.",
+    "step1": "Service",
+    "step2": "Barber",
+    "step3": "Date & Time",
+    "step4": "Your Details",
+    "step5": "Confirm",
+    "selectService": "Choose a Service",
+    "selectBarber": "Choose a Barber",
+    "anyBarber": "Any Available Barber",
+    "anyBarberDesc": "We'll assign the next available barber",
+    "selectDate": "Select a Date",
+    "selectTime": "Available Time Slots",
+    "noSlots": "No available slots for this day. Please try another date.",
+    "customerName": "Full Name",
+    "customerPhone": "Phone Number",
+    "customerEmail": "Email (optional)",
+    "notes": "Additional Notes (optional)",
+    "confirm": "Confirm Booking",
+    "back": "Back",
+    "next": "Next",
+    "summary": "Booking Summary",
+    "service": "Service",
+    "barber": "Barber",
+    "date": "Date",
+    "time": "Time",
+    "duration": "Duration",
+    "price": "Price",
+    "name": "Name",
+    "phone": "Phone",
+    "successTitle": "Booking Confirmed!",
+    "successSubtitle": "Your appointment has been booked successfully.",
+    "successMessage": "We'll send a confirmation to your phone. See you soon!",
+    "bookAnother": "Book Another Appointment",
+    "namePlaceholder": "Enter your full name",
+    "phonePlaceholder": "+966 5XX XXX XXXX",
+    "emailPlaceholder": "your@email.com",
+    "notesPlaceholder": "Any special requests?"
+  },
+  "gallery": {
+    "title": "Our Gallery",
+    "subtitle": "A glimpse into our craft."
+  },
+  "contact": {
+    "title": "Find Us",
+    "subtitle": "Visit us or get in touch.",
+    "address": "Address",
+    "addressValue": "123 Barber Street, Riyadh, Saudi Arabia",
+    "phone": "Phone",
+    "phoneValue": "+966 50 000 0000",
+    "hours": "Working Hours",
+    "hoursSat": "Saturday – Thursday: 9:00 AM – 10:00 PM",
+    "hoursFri": "Friday: 2:00 PM – 10:00 PM",
+    "social": "Follow Us",
+    "sendMessage": "Send a Message",
+    "yourName": "Your Name",
+    "yourPhone": "Your Phone",
+    "yourMessage": "Message",
+    "send": "Send"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Overview",
+    "bookings": "Bookings",
+    "services": "Services",
+    "barbers": "Barbers",
+    "settings": "Settings",
+    "logout": "Sign Out",
+    "todayBookings": "Today's Bookings",
+    "weekBookings": "This Week",
+    "totalBookings": "Total Bookings",
+    "pendingBookings": "Pending",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "no_show": "No Show"
+    },
+    "actions": {
+      "confirm": "Confirm",
+      "complete": "Complete",
+      "cancel": "Cancel",
+      "noShow": "No Show"
+    },
+    "addService": "Add Service",
+    "addBarber": "Add Barber",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "auth": {
+    "login": "Sign In",
+    "email": "Email Address",
+    "password": "Password",
+    "loginTitle": "Owner Login",
+    "loginSubtitle": "Access your barbershop dashboard",
+    "error": "Invalid email or password"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "close": "Close",
+    "minutes": "min",
+    "sar": "SAR"
+  }
+}

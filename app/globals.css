@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ── Tailwind v4 design tokens ── */
+@theme {
+  /* Colors */
+  --color-charcoal: #1a1a2e;
+  --color-deep: #16213e;
+  --color-gold: #c9a84c;
+  --color-gold-light: #e8c97a;
+  --color-gold-dark: #a07830;
+  --color-cream: #f5f0e8;
+  --color-warm-white: #faf8f5;
+  --color-dark-bg: #0d0d0d;
+  --color-dark-card: #1e1e2e;
+
+  /* Fonts */
+  --font-sans: 'Inter', 'Cairo', sans-serif;
+  --font-serif: 'Playfair Display', 'Cairo', serif;
+  --font-arabic: 'Cairo', sans-serif;
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-slide-up: slideUp 0.6s ease-out;
+  --animate-slide-down: slideDown 0.3s ease-out;
+  --animate-scale-in: scaleIn 0.4s ease-out;
+  --animate-shimmer: shimmer 2s infinite linear;
+  --animate-gold-pulse: goldPulse 2s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes shimmer {
+    from { background-position: -200% 0; }
+    to { background-position: 200% 0; }
+  }
+  @keyframes goldPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+    50% { box-shadow: 0 0 20px 4px rgba(201, 168, 76, 0.3); }
+  }
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #0d0d0d;
+    color: #f5f0e8;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  [dir="rtl"] body,
+  [dir="rtl"] {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  [dir="rtl"] .font-serif {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .gold-gradient {
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c97a 50%, #c9a84c 100%);
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c97a 50%, #c9a84c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+  }
+
+  .dark-card {
+    background: linear-gradient(145deg, #1e1e2e 0%, #16213e 100%);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c97a 50%, #c9a84c 100%);
+    color: #0d0d0d;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+  }
+
+  .btn-gold:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-outline-gold {
+    background: transparent;
+    color: #c9a84c;
+    font-weight: 600;
+    border: 1.5px solid #c9a84c;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+
+  .btn-outline-gold:hover {
+    background: rgba(201, 168, 76, 0.1);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+  }
+
+  .section-pattern {
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(201, 168, 76, 0.02) 20px,
+        rgba(201, 168, 76, 0.02) 40px
+      );
+  }
+
+  .nav-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0d0d0d; }
+  ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 3px; }
+
+  /* Selection */
+  ::selection { background: rgba(201, 168, 76, 0.3); color: #f5f0e8; }
+}
