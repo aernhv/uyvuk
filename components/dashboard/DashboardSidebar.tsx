@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
-import { LayoutDashboard, Calendar, Scissors, Users, LogOut } from "lucide-react";
+import { LayoutDashboard, Calendar, Scissors, Users, CalendarX, Settings, LogOut } from "lucide-react";
 import { cn } from "@/app/lib/utils";
 
 interface DashboardSidebarProps {
@@ -19,6 +19,8 @@ export default function DashboardSidebar({ locale }: DashboardSidebarProps) {
     { href: `/${locale}/dashboard/bookings`, icon: Calendar, label: isRTL ? "الحجوزات" : "Bookings" },
     { href: `/${locale}/dashboard/services`, icon: Scissors, label: isRTL ? "الخدمات" : "Services" },
     { href: `/${locale}/dashboard/barbers`, icon: Users, label: isRTL ? "الحلاقون" : "Barbers" },
+    { href: `/${locale}/dashboard/blocked-dates`, icon: CalendarX, label: isRTL ? "الأيام المحظورة" : "Blocked Dates" },
+    { href: `/${locale}/dashboard/settings`, icon: Settings, label: isRTL ? "الإعدادات" : "Settings" },
   ];
 
   const isActive = (href: string, exact?: boolean) =>

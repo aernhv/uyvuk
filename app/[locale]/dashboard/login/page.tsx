@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Scissors, Loader2, Eye, EyeOff } from "lucide-react";
@@ -9,9 +9,9 @@ import { cn } from "@/app/lib/utils";
 export default function LoginPage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const locale = params.locale ?? "en";
+  const { locale } = use(params);
   const isRTL = locale === "ar";
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -43,6 +43,7 @@ export default function LoginPage({
       setError(labels.error);
     } else {
       router.push(`/${locale}/dashboard`);
+      router.refresh();
     }
   };
 
